@@ -34,8 +34,9 @@ class TestBaidu:
         el = self.driver.find_element(By.ID, "kw")
         logger.info("清除输入框的内容")
         el.clear()
+        logger.info(f"填写关键字{keys}到输入框")
         el.send_keys(keys)
-        logger.info(f"提交{keys}进行查找")
+        logger.info(f"提交，进行符合{keys}的结果查找")
         self.driver.find_element(By.ID, "su").click()
         sleep(5)
         assert keys in self.driver.title
