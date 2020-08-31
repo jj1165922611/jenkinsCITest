@@ -18,6 +18,7 @@ class TestBaidu:
         if headless == "true":
             logger.info("设置了headless变量并且设置为true，将会无界面运行测试")
             chrome_options.add_argument("--headless")
+            chrome_options.add_argument('--no-sandbox')
         else:
             logger.info("系统未设置headless为true，将会有界面运行测试")
         self.driver = webdriver.Chrome(options=chrome_options)
